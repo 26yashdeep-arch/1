@@ -1,0 +1,33 @@
+{
+  "name": "gyd-gateway-global-trade",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "cf:build": "npx opennextjs-cloudflare build",
+    "preview": "npm run cf:build && npx opennextjs-cloudflare preview",
+    "preview:upload": "npm run cf:build && npx wrangler versions upload",
+    "deploy": "npm run cf:build && npx wrangler deploy",
+    "db:push": "prisma db push"
+  },
+  "dependencies": {
+    "@opennextjs/cloudflare": "^1.0.0",
+    "@prisma/client": "^6.0.0",
+    "@tanstack/react-query": "^5.0.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "prisma": "^6.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.0",
+    "wrangler": "4.28.1"
+  }
+}
